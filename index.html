@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<title>Правозащитный центр | Белорусские демократические силы</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Официальный сайт Правозащитного центра «Белорусские демократические силы». Защита прав человека, юридическая помощь, реформы."/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>"/>
+<style>
+:root{--bg:#0b1120;--bg-alt:#020617;--fg:#e5e7eb;--muted:#9ca3af;--accent:#1d4ed8;--accent-soft:#111827;--border:#1f2937;--card:#020617;--danger:#dc2626;--shadow:0 18px 40px rgba(15,23,42,.75)}
+[data-theme="light"]{--bg:#f3f4f6;--bg-alt:#fff;--fg:#111827;--accent-soft:#e5e7eb;--border:#d1d5db;--card:#fff;--shadow:0 18px 40px rgba(15,23,42,.15)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden;padding-bottom:150px;transition:background-color .5s,color .5s,border-color .5s}
+a{text-decoration:none;color:inherit}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@keyframes holo{0%{background-position:0%}100%{background-position:200%}}
+.holo-text{background:linear-gradient(90deg,#00f260,#0575e6,#f200cb,#00f260);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:holo 3s linear infinite;position:relative;overflow:hidden}
+.hero{width:100%;height:45vh;min-height:220px;max-height:420px;position:relative;overflow:hidden;opacity:0;transform:translateY(-10px);animation:heroFadeIn .9s ease-out forwards;border:2px solid #000;background:#000;z-index:1}
+@keyframes heroFadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.hero-stripes{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,#fff 0%,#fff 33.33%,#ff0000 33.33%,#ff0000 66.66%,#fff 66.66%,#fff 100%);transform:rotateX(5deg);transform-origin:center bottom;animation:stripes3D 6s infinite ease-in-out;pointer-events:none}
+@keyframes stripes3D{0%,100%{transform:rotateX(5deg) rotateY(0)}25%{transform:rotateX(5deg) rotateY(2deg)}50%{transform:rotateX(5deg) rotateY(0)}75%{transform:rotateX(5deg) rotateY(-2deg)}}
+.hero-top-text{position:absolute;top:20%;left:50%;transform:translateX(-50%);width: 90%; max-width: 1000px; pointer-events:none;z-index:5; display: flex; justify-content: center; align-items: center;}
+.hero-top-wrapper { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; pointer-events: auto; }
+/* --- СТИЛЬ ДЛЯ СИНЕЙ КНОПКИ АНКЕТЫ --- */
+.survey-brand-btn {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(29, 78, 216, 0.6);
+    border: 2px solid rgba(255,255,255,0.2);
+    pointer-events: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.survey-brand-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(29, 78, 216, 0.9);
+}
+/* --- СТИЛЬ ДЛЯ КНОПКИ YOUTUBE --- */
+.yt-brand-btn { pointer-events: auto; background: #FF0000; color: #fff; padding: 10px 24px; border-radius: 24px; font-family: sans-serif; font-weight: bold; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 0 15px rgba(255,0,0,0.6); transition: transform 0.2s ease, box-shadow 0.2s ease; border: 2px solid rgba(255,255,255,0.2); }
+.yt-brand-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,0,0,0.9); }
+.yt-icon-svg { width: 24px; height: 24px; fill: #fff; }
+
+.hero-marquee-wrapper{position:absolute;bottom:40px;width:100%;overflow:hidden;pointer-events:none;z-index:6}
+.hero-text{display:inline-block;white-space:nowrap;font-size:3.5rem;font-weight:800;text-transform:uppercase;line-height:.9;padding-left:100%;animation:marquee 30s linear infinite,holoShift 3s infinite linear}
+@keyframes marquee{0%{transform:translate(0,0)}100%{transform:translate(-100%,0)}}
+@keyframes holoShift{0%{background-position:0%}100%{background-position:200%}}
+.noise-bg{position:absolute;top:0;left:0;width:100%;height:100%;background-image:repeating-radial-gradient(#000 0 0.0001%,#fff 0 0.0002%);opacity:0.04;pointer-events:none;z-index:0}
+.coin-container{width:90px;height:90px;margin:0 auto 15px auto;perspective:1000px}
+.coin{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:spinCoin 4s linear infinite;will-change:transform}
+.coin-face{position:absolute;width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#713f12;background:radial-gradient(circle at 30% 30%,#fcd34d,#f59e0b);border:3px solid #b45309;box-shadow:0 0 15px rgba(251,191,36,.5);backface-visibility:hidden}
+.back { transform: rotateY(180deg) translateZ(5px); background: radial-gradient(circle at 30% 30%, #f3f4f6, #9ca3af); color: #374151; border-color: #9ca3af; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
+.front{transform:translateZ(5px)}
+@keyframes spinCoin{0%{transform:rotateY(0deg)}100%{transform:rotateY(360deg)}}
+.spin-fast { animation-duration: 3s !important; }
+.spin-medium { animation-duration: 5s !important; }
+.spin-slow { animation-duration: 6s !important; }
+.spin-slower { animation-duration: 8s !important; }
+.spin-super-slow { animation-duration: 9s !important; }
+.coin-emoji { font-size: 2.5rem; }
+.tilt-card{transition:transform .3s ease;transform-style:preserve-3d}
+.tilt-card:hover{transform:perspective(1000px) rotateX(var(--ry,0)) rotateY(var(--rx,0)) scale(1.02)}
+.lang-bar{background:var(--bg-alt);position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.lang-bar-inner{max-width:1120px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:flex-end;gap:1rem}
+.globe-btn{background:var(--card);border:2px solid var(--border);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.3rem;transition:.3s}
+.globe-btn:hover{border-color:var(--accent);transform:scale(1.1)}
+.globe-flags{position:absolute;right:0;top:50px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem;display:none;grid-template-columns:repeat(3,1fr);gap:.4rem;min-width:300px;box-shadow:var(--shadow);z-index:1001;max-height: 60vh; overflow-y: auto;}
+.globe-flags.show{display:grid}
+.flag-item{display:flex;align-items:center;gap:8px;padding:.5rem;border-radius:8px;cursor:pointer;transition:.2s;font-size:.8rem;color:var(--fg);text-decoration:none;}
+.flag-item:hover{background:var(--accent-soft);color:var(--accent)}
+.fi { width: 1.2em; height: 1em; background-size: cover; border-radius: 2px; }
+.theme-toggle{background:var(--card);border:2px solid var(--border);border-radius:999px;padding:.4rem .8rem;cursor:pointer;min-width:44px;font-size:1.2rem}
+.card-scroll{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:1rem;max-width:1120px;margin:0 auto}
+.info-card{min-width:320px;max-width:380px;scroll-snap-align:start;border:1px solid var(--border);border-radius:14px;padding:1.8rem;background:var(--card);box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease; text-align: center;}
+.info-card h3{margin:0 0 1rem;color:var(--fg);border-bottom:2px solid var(--accent);padding-bottom:.5rem; text-align: start;}
+.info-card p{color:var(--muted);font-size:.95rem; text-align: start;}
+.photo-card{padding:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:500px;border:none;position:relative}
+.photo-card-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+.photo-card-content{position:relative;z-index:10;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,0) 100%);padding:2rem;color:#fff;text-align:center}
+.photo-card h3 { text-align: center; }
+.btn-primary{display:block;text-align:center;padding:.85rem;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;margin-top:1rem;transition:.3s;position:relative;z-index:20;border:none}
+.btn-primary:hover{transform:scale(1.02);background:#1e40af}
+.site-footer{border-top:1px solid var(--border);background:var(--bg-alt);padding:2rem 1rem 3rem;margin-top:4rem}
+.footer-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.footer-block h3{margin-bottom:1rem;color:var(--fg);border-bottom:2px solid var(--accent);padding-bottom:.5rem}
+.footer-block li{margin-bottom:8px;color:var(--muted);list-style:none}
+
+/* ЦВЕТА ДЛЯ СОЦСЕТЕЙ */
+.social-grid{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;transition:.3s;color:#fff;position:relative;z-index:10}
+.social-btn:hover{transform:scale(1.1);filter:brightness(1.15)}
+.social-icon{width:20px;height:20px;fill:currentColor}
+.social-yt{background:#FF0000}.social-tg{background:#229ED9}.social-fb{background:#1877F2}.social-x{background:#000;border:1px solid #333}.social-ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
+.social-tt{background:#000000;border:1px solid #333;filter:drop-shadow(0 0 2px rgba(255,255,255,0.3))}
+/* ------------------ */
+
+.seo-article{max-width:1120px;margin:3rem auto;padding:0 1rem;font-size:0.95rem;color:var(--muted);line-height:1.7}
+.seo-article h1, .seo-article h2, .seo-article h3 { color: var(--fg); margin-top: 1.5rem; }
+.seo-article p { margin-bottom: 1rem; }
+.seo-article ul { margin-bottom: 1rem; padding-left: 20px; }
+.seo-article li { margin-bottom: 0.5rem; }
+.payment-section{max-width:1120px;margin:3rem auto;padding:0 1rem;display:flex;flex-direction:column;gap:1.5rem}
+.payment-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;transition:.3s}
+.payment-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.copy-box{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);padding:.6rem;border-radius:8px;font-family:monospace;font-size:.8rem;margin-top:5px;border:1px solid rgba(255,255,255,.05)}
+.val{flex-grow:1;word-break:break-all;color:var(--fg)}
+.copy-btn{background:var(--accent);color:#fff;border:none;padding:.4rem .6rem;border-radius:6px;cursor:pointer;font-weight:bold;font-size:.75rem;white-space:nowrap}
+.net-badge{display:inline-block;background:var(--danger);color:#fff;font-size:.7rem;padding:2px 6px;border-radius:4px;font-weight:bold;margin-inline-start:5px;vertical-align:middle}
+.btn-danger{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:92%;max-width:480px;padding:1rem;border-radius:50px;background:var(--danger);color:#fff;font-weight:bold;box-shadow:0 8px 24px rgba(220,38,38,.55);z-index:9999;border:2px solid rgba(255,255,255,.2);animation:pulseBtn 2s infinite}
+@keyframes pulseBtn{0%{box-shadow:0 0 0 0 rgba(220,38,38,.4)}70%{box-shadow:0 0 0 12px rgba(220,38,38,0)}100%{box-shadow:0 0 0 0 rgba(220,38,38,0)}}
+.btn-danger:hover{transform:translateX(-50%) scale(1.05);background:#b91c1c}
+</style>
+</head>
+
+<body>
+<div class="hero">
+  <div class="noise-bg"></div><div class="hero-stripes"></div>
+  <div class="hero-top-text">
+    <div class="hero-top-wrapper">
+        <a href="https://www.youtube.com/channel/UCTXAwovvaec4w9ztbggWMEQ" target="_blank" rel="noopener noreferrer" class="yt-brand-btn">
+            <svg class="yt-icon-svg" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+            YouTube
+        </a>
+        <a href="https://6900903-ai.github.io/com/" target="_blank" class="survey-brand-btn">
+            📝 Анкета
+        </a>
+    </div>
+  </div>
+  <div class="hero-marquee-wrapper"><div class="hero-text holo-text" data-i18n="marquee">ПРАВОЗАЩИТНЫЙ ЦЕНТР БЕЛОРУССКИЕ ДЕМОКРАТИЧЕСКИЕ СИЛЫ • ЗАЩИТА ПРАВ • СВОБОДА • БЕЗОПАСНОСТЬ И СПРАВЕДЛИВОСТЬ • </div></div>
+  <div class="hero-cursor-trail" id="trail"></div>
+</div>
+
+<nav class="lang-bar">
+  <div class="lang-bar-inner">
+    <div class="lang-globe">
+      <button class="globe-btn" id="globeBtn" type="button" aria-label="Сменить язык / Change Language">🌐</button>
+      <div class="globe-flags" id="globeFlags">
+        <a href="?lang=ru" class="flag-item" data-lang="ru"><span class="fi fi-ru"></span> Русский</a>
+        <a href="?lang=be" class="flag-item" data-lang="be"><span class="fi fi-by"></span> Беларуская</a>
+        <a href="?lang=en" class="flag-item" data-lang="en"><span class="fi fi-gb"></span> English</a>
+      </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему / Toggle Theme"><span id="themeIcon">☀️</span></button>
+  </div>
+</nav>
+
+<main>
+  <section class="card-scroll" id="main">
+    <article class="info-card tilt-card photo-card">
+      <img src="1000023339.jpg" alt="Юрий Чудинович" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
+      <div class="photo-card-content">
+        <h3 class="holo-text" data-i18n="card_photo_title">Правозащитный центр</h3>
+        <a href="https://t.me/+48795972990" target="_blank" rel="noopener noreferrer" class="btn-primary photo-btn" data-i18n="card_photo_button">Связаться с нами</a>
+      </div>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-fast">
+          <div class="coin-face front coin-emoji">⚖️</div>
+          <div class="coin-face back coin-emoji">⚖️</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_demo_title">Демократические силы</h3>
+      <p data-i18n="card_demo_text">Консолидация всех здоровых сил общества. Организация, созданная для защиты прав человека, разработки реформ и подготовки кадрового резерва для новой свободной страны.</p>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-medium">
+          <div class="coin-face front coin-emoji">🛡️</div>
+          <div class="coin-face back coin-emoji">🛡️</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card4_title">Фонд помощи</h3>
+      <p data-i18n="card4_text">Наша миссия — чтобы ни один политзаключенный не остался один на один с бедой. Оплата адвокатов, сбор передач и поддержка семей репрессированных героев.</p>
+      <a href="https://zrzutka.pl/komitet-solidarnosci-represjonowanych" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="card4_button">Поддержать фонд</a>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-medium">
+          <div class="coin-face front coin-emoji">🤝</div>
+          <div class="coin-face back coin-emoji">🤝</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_committee_title">Комитет солидарности</h3>
+      <span class="card-date">Глобальная сеть</span>
+      <p data-i18n="card_committee_text">Мы объединяем диаспоры, политиков и активистов по всему миру для международного давления на режим и освобождения всех незаконно осужденных граждан.</p>
+    </article>
+
+     <article class="info-card tilt-card" style="text-align:center;">
+      <div class="coin-container">
+        <div class="coin">
+          <div class="coin-face front">CHUDO</div>
+          <div class="coin-face back">KRC20</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card3_title">Криптовалюта CHUDO</h3>
+      <p data-i18n="card3_text">Инструмент финансовой свободы, неподвластный санкциям и блокировкам. Валюта солидарности и поддержки демократического будущего.</p>
+    </article>
+  </section>
+
+  <section class="seo-article">
+    <div data-i18n="seo_text">
+       </div>
+  </section>
+
+  <section class="payment-section">
+    <div class="payment-card">
+      <h3 style="color:var(--accent)">PKO Bank Polski (PLN/EUR)</h3>
+      <div>Card: <strong>4251 2513 6480 1214</strong> (до 11/30)</div>
+      <div>SWIFT: <strong>BPKOPLPW</strong></div>
+      <div style="margin-bottom:5px">
+        <span style="font-size:.7rem;color:var(--muted)">IBAN (PL)</span>
+        <div class="copy-box"><span class="val" id="iban_pl">PL98 1020 1185 0000 4502 0419 7976</span><button class="copy-btn" data-target="iban_pl">Copy</button></div>
+      </div>
+    </div>
+    <div class="payment-card">
+      <h3 style="color:var(--accent)">Revolut (Multicurrency)</h3>
+      <div>Card: <strong>4165 9871 1998 8302</strong> (до 10/30)</div>
+      <div style="margin-bottom:5px">
+        <span style="font-size:.7rem;color:var(--muted)">IBAN (International)</span>
+        <div class="copy-box"><span class="val" id="iban_rev">LT81 3250 0653 6173 6755</span><button class="copy-btn" data-target="iban_rev">Copy</button></div>
+      </div>
+    </div>
+    <div class="payment-card">
+        <h3 style="color:var(--accent)">USDT (TRC-20)</h3>
+        <div class="copy-box"><span class="val" id="usdt">TQMo2KNXE8n961ddNFfJdcH4ZixVmMeU8U</span><button class="copy-btn" data-target="usdt">Copy</button></div>
+    </div>
+  </section>
+</main>
+
+<a href="https://zrzutka.pl/komitet-solidarnosci-represjonowanych" target="_blank" rel="noopener noreferrer" class="btn-danger" data-i18n="support_button">Поддержать сейчас</a>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-block">
+      <h3 class="holo-text" data-i18n="footer_title1">Правозащитный центр</h3>
+      <ul>
+        <li><strong data-i18n="footer_address">Адрес:</strong> Польша, Варшава, ul. Lokcowa 12</li>
+        <li><strong>Email:</strong> <a href="mailto:6900908@gmail.com">6900908@gmail.com</a></li>
+        <li><strong>Телефон:</strong> <a href="tel:+48795972990">+48795972990</a></li>
+      </ul>
+    </div>
+    <div class="footer-block">
+      <h3 class="holo-text" data-i18n="footer_title3">Соцсети</h3>
+      <div class="social-grid">
+        <a href="https://www.youtube.com/channel/UCTXAwovvaec4w9ztbggWMEQ" target="_blank" rel="noopener noreferrer" class="social-btn social-yt" aria-label="YouTube"><svg class="social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://t.me/+48795972990" target="_blank" rel="noopener noreferrer" class="social-btn social-tg" aria-label="Telegram"><svg class="social-icon" viewBox="0 0 24 24"><path d="M11.944 0C5.347 0 0 5.347 0 11.944c0 6.597 5.347 11.944 11.944 11.944 6.597 0 11.944-5.347 11.944-11.944C23.888 5.347 18.541 0 11.944 0zm5.204 8.12l-1.764 8.312c-.133.593-.483.738-.982.458l-2.686-1.98-1.296 1.246c-.144.144-.264.264-.54.264l.192-2.73 4.968-4.488c.216-.192-.048-.3-.336-.108L8.568 12.44 5.916 11.61c-.576-.18-.588-.576.12-.852l10.38-4.008c.48-.18.9.108.732.372z"/></svg></a>
+        <a href="https://www.facebook.com/share/1bJi1GCA85/" target="_blank" rel="noopener noreferrer" class="social-btn social-fb" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://x.com/CHUDZINOVICH1" target="_blank" rel="noopener noreferrer" class="social-btn social-x" aria-label="X (Twitter)"><svg class="social-icon" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/chudzinovichyury" target="_blank" rel="noopener noreferrer" class="social-btn social-ig" aria-label="Instagram"><svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://tiktok.com/@chudzinovich" target="_blank" rel="noopener noreferrer" class="social-btn social-tt" aria-label="TikTok">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:2rem;color:var(--muted);font-size:.8rem">© 2025 <span data-i18n="marquee">Белорусские демократические силы</span></p>
+</footer>
+
+<script>
+window.addEventListener('load',()=>{
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang');
+  const userLang = langParam || navigator.language.slice(0, 2) || 'ru';
+  applyLang(userLang);
+});
+
+const translations = {
+  ru: {
+    meta_title: "Правозащитный центр | Белорусские демократические силы",
+    meta_desc: "Официальный сайт правозащитного центра. Защита прав, юридическая помощь, адвокация.",
+    marquee: "ПРАВОЗАЩИТНЫЙ ЦЕНТР БЕЛОРУССКИЕ ДЕМОКРАТИЧЕСКИЕ СИЛЫ • ЗАЩИТА ПРАВ • СВОБОДА • БЕЗОПАСНОСТЬ И СПРАВЕДЛИВОСТЬ • ",
+    card_photo_title: "Правозащитный центр",
+    card_photo_button: "Связаться с нами",
+    card_demo_title: "Демократические силы",
+    card_demo_text: "Консолидация всех здоровых сил общества. Организация, созданная для защиты прав человека и разработки реформ новой страны.",
+    card4_title: "Фонд помощи",
+    card4_text: "Наша миссия — чтобы ни один политзаключенный не остался один на один с бедой. Мы учреждены для юридической и гуманитарной поддержки.",
+    card_committee_title: "Комитет солидарности",
+    card_committee_text: "Глобальная сеть солидарности. Международное давление на режим и освобождение всех незаконно осужденных.",
+    card3_title: "Криптовалюта CHUDO",
+    card3_text: "Инструмент финансовой независимости для поддержки репрессированных, неподвластный блокировкам.",
+    card4_button: "Поддержать фонд",
+    support_button: "Поддержать сейчас",
+    footer_title1: "БДС",
+    footer_address: "Адрес:",
+    footer_title3: "Соцсети",
+    seo_text: `
+      <h1>Цели и задачи Правозащитного центра «Белорусские демократические силы»</h1>
+      <p><strong>Правозащитный центр «Белорусские демократические силы» (БДС)</strong> — это независимая организация, созданная для защиты фундаментальных прав граждан Беларуси, пострадавших от политических репрессий, а также для консолидации усилий по построению демократического государства.</p>
+      
+      <h2>Наши основные цели:</h2>
+      <ul>
+        <li><strong>Защита прав человека:</strong> Мониторинг нарушений, юридическая фиксация преступлений режима и оказание правовой помощи жертвам репрессий.</li>
+        <li><strong>Освобождение политзаключенных:</strong> Использование всех доступных международных механизмов давления для немедленного и безусловного освобождения всех узников совести.</li>
+        <li><strong>Демократический транзит:</strong> Разработка законодательной базы и реформ для перехода к правовому государству и возврату к конституционным нормам.</li>
+      </ul>
+
+      <h2>Ключевые задачи деятельности:</h2>
+      <p>Мы работаем ежедневно по нескольким стратегическим направлениям:</p>
+      <ul>
+        <li><strong>Юридическая поддержка:</strong> Оплата адвокатов, консультации и сопровождение дел в международных судах.</li>
+        <li><strong>Гуманитарная помощь:</strong> Сбор средств и передач для заключенных и их семей, медицинская реабилитация освобожденных.</li>
+        <li><strong>Международная адвокация:</strong> Работа с политиками ЕС и США, продвижение санкционных списков против виновных в репрессиях.</li>
+        <li><strong>Информационное сопротивление:</strong> Распространение правдивой информации о ситуации в Беларуси, борьба с пропагандой.</li>
+      </ul>
+
+      <p>Центр также координирует работу <strong>Партии «ДЕЛ»</strong> и фонда <strong>«Честный политзек»</strong>, объединяя усилия политиков, активистов и диаспоры для общей победы.</p>
+    `
+  },
+  be: {
+    meta_title: "Праваабарончы цэнтр | Беларускія дэмакратычныя сілы",
+    marquee: "ПРАВААБАРОНЧЫ ЦЭНТР БЕЛАРУСКІЯ ДЭМАКРАТЫЧНЫЯ СІЛЫ • ЗАЩИТА ПРАВ • СВОБОДА • БЕЗОПАСНОСТЬ И СПРАВЕДЛИВОСТЬ • ",
+    card_photo_title: "Праваабарончы цэнтр",
+    card_photo_button: "Звязацца з намі",
+    card_demo_title: "Дэмакратычныя сілы",
+    card_demo_text: "Кансалідацыя грамадства. Арганізацыя, створаная для абароны правоў чалавека і распрацоўкі рэформаў новай краіны.",
+    footer_title1: "БДС",
+    seo_text: `<h1>Мэты і задачы Праваабарончага цэнтра</h1><p>Абарона правоў чалавека, юрыдычная дапамога рэпрэсаваным і міжнародны ціск на рэжым дзеля вызвалення палітвязняў.</p>`
+  },
+  en: {
+    meta_title: "Human Rights Center | Belarusian Democratic Forces",
+    marquee: "HUMAN RIGHTS CENTER BELARUSIAN DEMOCRATIC FORCES • HUMAN RIGHTS • FREEDOM • SECURITY AND JUSTICE • ",
+    card_photo_title: "Human Rights Center",
+    card_photo_button: "Contact Us",
+    card_demo_title: "Democratic Forces",
+    card_demo_text: "Consolidation of society. An organization created to protect human rights and develop reforms for a new free country.",
+    footer_title1: "BDF",
+    seo_text: `<h1>Goals and Tasks of the Human Rights Center</h1><p>Protection of human rights, legal aid for the repressed, and international pressure on the regime to release political prisoners.</p>`
+  }
+};
+
+function applyLang(lang) {
+  document.documentElement.lang = lang;
+  
+  // URL Update
+  const url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  window.history.pushState({}, '', url);
+
+  if(translations[lang]) {
+      if(translations[lang].meta_title) document.title = translations[lang].meta_title;
+      if(translations[lang].meta_desc) {
+          const metaDesc = document.querySelector('meta[name="description"]');
+          if(metaDesc) metaDesc.setAttribute('content', translations[lang].meta_desc);
+      }
+      if(translations[lang].hero_name) {
+          const photo = document.querySelector('.photo-card-bg');
+          if(photo) photo.alt = translations[lang].hero_name;
+      }
+  }
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      if (translations[lang][key].includes('<')) {
+        el.innerHTML = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
+    }
+  });
+}
+
+document.querySelectorAll('.flag-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    const lang = item.getAttribute('data-lang');
+    applyLang(lang);
+    const globeFlags = document.getElementById('globeFlags');
+    if(globeFlags) globeFlags.classList.remove('show');
+  });
+});
+
+const globeBtn = document.getElementById('globeBtn');
+const globeFlags = document.getElementById('globeFlags');
+if (globeBtn && globeFlags) {
+  globeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    globeFlags.classList.toggle('show');
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.lang-globe')) {
+      globeFlags.classList.remove('show');
+    }
+  });
+}
+
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') !== 'light';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+  });
+}
+
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.target;
+    const textElement = document.getElementById(id);
+    if(textElement) {
+      navigator.clipboard.writeText(textElement.textContent).then(() => {
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.style.background = '#22c55e';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+        }, 1200);
+      });
+    }
+  });
+});
+
+// Cursor trail effect
+const trail = document.getElementById('trail');
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+function animateTrail() {
+    trailX += (mouseX - trailX) * 0.1;
+    trailY += (mouseY - trailY) * 0.1;
+    if(trail) {
+        trail.style.left = trailX + 'px';
+        trail.style.top = trailY + 'px';
+    }
+    requestAnimationFrame(animateTrail);
+}
+animateTrail();
+</script>
+</body>
+</html>
